@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "fsm_automatic.h": "c",
+        "button.h": "c",
+        "fsm_manual.h": "c",
+        "fsm_select_mode.h": "c",
+        "gobal.h": "c",
+        "software_timer.h": "c"
+    }
+}

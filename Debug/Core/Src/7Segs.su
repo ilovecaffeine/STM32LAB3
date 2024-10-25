@@ -1,0 +1,5 @@
+../Core/Src/7Segs.c:12:6:off_all_Seg	8	static
+../Core/Src/7Segs.c:32:8:display7SEG	16	static
+../Core/Src/7Segs.c:131:8:display7SEG2	16	static
+../Core/Src/7Segs.c:231:6:display2DigitNumberWay1	24	static
+../Core/Src/7Segs.c:265:6:display2DigitNumberWay2	24	static
