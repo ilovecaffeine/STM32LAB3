@@ -12,15 +12,136 @@ int green_duration = 1;
 int yellow_duration = 1;
 
 void setRedLEDDuration(int duration) {
-  red_led_duration  = duration;
+
+// int green_led_duration = 3;
+// int yellow_led_duration = 2;
+    
+    if (green_led_duration + yellow_led_duration == duration) {
+        red_led_duration = duration;
+    }
+    else if (duration==1) return;
+    
+    else if (duration > green_led_duration + yellow_led_duration) {
+        // Keep adding 1 to green first, then yellow, alternating until the sum equals duration
+
+        while (green_led_duration + yellow_led_duration < duration) {
+
+                if ((green_led_duration + yellow_led_duration) % 2 == 0) {
+                    green_led_duration++;
+                } else {
+                    yellow_led_duration++;
+                }
+            
+        }
+        red_led_duration = duration;
+        // Additional logic can be added here if needed
+    } else if (duration < green_led_duration + yellow_led_duration) {
+
+    // Keep subtracting 1 from yellow first, then green, alternating until the sum equals duration
+
+    while (green_led_duration + yellow_led_duration > duration) {
+
+            if (green_led_duration >= yellow_led_duration) {
+                green_led_duration--;
+            } else {
+                yellow_led_duration--;
+            }
+
+            // Safeguard to avoid either duration going below 1
+            if (green_led_duration < 1) green_led_duration = 1;
+            if (yellow_led_duration < 1) yellow_led_duration = 1;
+        
+        
+    }   
+        red_led_duration = duration;
+        // Additional logic can be added here if needed
+    }
 }
 
+
 void setGreenLEDDuration(int duration) {
-   green_led_duration = duration;
+// int red_led_duration = 5;
+// int yellow_led_duration = 2;
+
+    if (red_led_duration - yellow_led_duration == duration) {
+        green_led_duration = duration;
+    } else if (duration > red_led_duration - yellow_led_duration) {
+
+       
+        while (red_led_duration - yellow_led_duration < duration) {
+
+            if (red_led_duration < 2*duration) {
+                red_led_duration++;
+            } else if (yellow_led_duration > 1) {
+                yellow_led_duration--;
+            } else {
+                red_led_duration++;
+            }
+            
+        }
+        green_led_duration = duration;
+    } else if (duration < red_led_duration - yellow_led_duration) {
+
+       
+        while (red_led_duration - yellow_led_duration > duration) {
+
+            // Primarily decrement red_led_duration
+            if ((red_led_duration > 2*duration) && (red_led_duration > 2)) {
+                red_led_duration--;
+            }
+            // If further adjustment is needed, decrement yellow_led_duration as well
+            else if (yellow_led_duration > 1) {
+                yellow_led_duration--;
+            } else {
+                red_led_duration--;  // Fallback if yellow_led_duration cannot be decremented
+            }
+            
+        }
+        green_led_duration = duration;
+    }
 }
 
 void setYellowLEDDuration(int duration) {
-   yellow_led_duration = duration;
+// int red_led_duration = 5;
+// int green_led_duration = 3;
+ 
+    
+    if (red_led_duration - green_led_duration == duration) {
+        yellow_led_duration = duration;
+    } else if (duration > red_led_duration - green_led_duration) {
+
+
+        while (red_led_duration - green_led_duration < duration) {
+
+            if (red_led_duration < 2*duration) {
+                red_led_duration++;
+            } else if (green_led_duration > 1) {
+                green_led_duration--;
+            } else {
+                red_led_duration++;
+            }
+            
+        }
+        yellow_led_duration = duration;
+    } else if (duration < red_led_duration - green_led_duration) {
+
+
+        while (red_led_duration - green_led_duration > duration) {
+
+            // Primarily decrement red_led_duration
+            if ((red_led_duration > 2*duration) && (red_led_duration > 2)) {
+                red_led_duration--;
+            }
+            // If further adjustment is needed, decrement yellow_led_duration as well
+            else if (green_led_duration > 1) {
+                green_led_duration--;
+            } else {
+                red_led_duration--;  // Fallback if yellow_led_duration cannot be decremented
+            }
+            
+        }
+        yellow_led_duration = duration;
+    }
 }
 
 void fsm_select_mode_run() {
