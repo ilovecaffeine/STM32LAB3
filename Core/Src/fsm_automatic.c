@@ -51,7 +51,7 @@ switch (status_way1) {
             if (isButton1Pressed() == 1) {
                 status_way1 = INIT_mode;
                 status_way2 = INIT_mode;
-                setTimer0(10000);
+
             }
 
             if (timer0_flag == 1) {
@@ -81,7 +81,7 @@ switch (status_way1) {
             if (isButton1Pressed() == 1) {
                 status_way1 = INIT_mode;
                 status_way2 = INIT_mode;
-                setTimer0(10000);
+  
             }
 
             if (timer0_flag == 1) {
@@ -112,7 +112,7 @@ switch (status_way1) {
             if (isButton1Pressed() == 1) {
                 status_way1 = INIT_mode;
                 status_way2 = INIT_mode;
-                setTimer0(10000);
+
             }
 
             if (timer0_flag == 1) {

@@ -167,7 +167,7 @@ void fsm_select_mode_run() {
 
            status_way1 = SELECT_MODE_1;
            setTimer0(3000);
-             setTimer1(500); //Blinking
+             setTimer1(250); //Blinking
  
            break;
        case SELECT_MODE_1:
@@ -177,7 +177,7 @@ void fsm_select_mode_run() {
            if (isButton1Pressed() == 1) {
            status_way1 = SELECT_MODE_2;
            setTimer0(10000);
-            setTimer1(500); //Blinking
+            setTimer1(250); //Blinking
            setTimer4(10);
            }
 
@@ -201,14 +201,14 @@ void fsm_select_mode_run() {
                HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
                HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, GPIO_PIN_RESET);
                HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, GPIO_PIN_RESET);
-               setTimer1(500); // 0.5 seconds for 2 Hz blinking
+               setTimer1(250); // 0.5 seconds for 2 Hz blinking
            }
 
 
            if (isButton1Pressed() == 1) {
                status_way1 = SELECT_MODE_3;
                setTimer0(10000);
-            setTimer1(500); //Blinking
+            setTimer1(250); //Blinking
            setTimer4(10);
            }
            // Increment duration with Button 2
@@ -245,13 +245,13 @@ void fsm_select_mode_run() {
                HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
                HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
                HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, GPIO_PIN_RESET);
-               setTimer1(500); // 0.5 seconds for 2 Hz blinking
+               setTimer1(250); // 0.5 seconds for 2 Hz blinking
            }
 
            if (isButton1Pressed() == 1) {
                status_way1 = SELECT_MODE_4;
                setTimer0(10000);
-              setTimer1(500); //Blinking
+              setTimer1(250); //Blinking
            setTimer4(10);
            
            }
@@ -292,7 +292,7 @@ void fsm_select_mode_run() {
                HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
                HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, GPIO_PIN_RESET);
 
-               setTimer1(500); // 0.5 seconds for 2 Hz blinking
+               setTimer1(250); // 0.5 seconds for 2 Hz blinking
            }
 
            if (isButton1Pressed() == 1) {
