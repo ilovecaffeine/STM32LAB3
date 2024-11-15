@@ -48,8 +48,8 @@ void setRedLEDDuration(int duration) {
             }
 
             // Safeguard to avoid either duration going below 1
-            if (green_led_duration < 1) green_led_duration = 1;
-            if (yellow_led_duration < 1) yellow_led_duration = 1;
+            // if (green_led_duration < 1) green_led_duration = 1;
+            // if (yellow_led_duration < 1) yellow_led_duration = 1;
         
         
     }   
@@ -90,11 +90,11 @@ void setGreenLEDDuration(int duration) {
                 red_led_duration--;
             }
             // If further adjustment is needed, decrement yellow_led_duration as well
-            else if (yellow_led_duration > 1) {
-                yellow_led_duration--;
-            } else {
-                red_led_duration--;  // Fallback if yellow_led_duration cannot be decremented
-            }
+            else //if (yellow_led_duration > 1) {
+                yellow_led_duration++;
+            // } else {
+            //     red_led_duration--;  // Fallback if yellow_led_duration cannot be decremented
+            // }
             
         }
         green_led_duration = duration;
@@ -133,11 +133,11 @@ void setYellowLEDDuration(int duration) {
                 red_led_duration--;
             }
             // If further adjustment is needed, decrement yellow_led_duration as well
-            else if (green_led_duration > 1) {
-                green_led_duration--;
-            } else {
-                red_led_duration--;  // Fallback if yellow_led_duration cannot be decremented
-            }
+            else //if (green_led_duration > 1) {
+                green_led_duration++;
+            // } else {
+            //     red_led_duration--;  // Fallback if yellow_led_duration cannot be decremented
+            // }
             
         }
         yellow_led_duration = duration;
@@ -215,7 +215,7 @@ void fsm_select_mode_run() {
            if (isButton2Pressed() == 1) {
                red_duration++;
                if (red_duration > 99) {
-                   red_duration = 1; // Wrap around to 1 if it exceeds 9
+                   red_duration = 1; // Wrap around to 1 if it exceeds 99
                }
                setTimer0(10000);
            }
@@ -259,7 +259,7 @@ void fsm_select_mode_run() {
            if (isButton2Pressed() == 1) {
                yellow_duration++;
                if (yellow_duration > 99) {
-                   yellow_duration = 1; // Wrap around to 1 if it exceeds 9
+                   yellow_duration = 1; // Wrap around to 1 if it exceeds 99
                }
            setTimer0(10000);
            }
@@ -304,7 +304,7 @@ void fsm_select_mode_run() {
            if (isButton2Pressed() == 1) {
                green_duration++;
                if (green_duration > 99) {
-                   green_duration = 1; // Wrap around to 1 if it exceeds 9
+                   green_duration = 1; // Wrap around to 1 if it exceeds 99
                }
            setTimer0(10000);
            }
