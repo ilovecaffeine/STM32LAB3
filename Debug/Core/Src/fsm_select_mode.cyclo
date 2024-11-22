@@ -1,4 +1,4 @@
-../Core/Src/fsm_select_mode.c:14:6:setRedLEDDuration	9
-../Core/Src/fsm_select_mode.c:62:6:setGreenLEDDuration	10
-../Core/Src/fsm_select_mode.c:104:6:setYellowLEDDuration	10
-../Core/Src/fsm_select_mode.c:147:6:fsm_select_mode_run	26
+../Core/Src/fsm_select_mode.c:61:6:setRedLEDDuration	2
+../Core/Src/fsm_select_mode.c:76:6:setGreenLEDDuration	3
+../Core/Src/fsm_select_mode.c:93:6:setYellowLEDDuration	3
+../Core/Src/fsm_select_mode.c:195:6:fsm_select_mode_run	26
