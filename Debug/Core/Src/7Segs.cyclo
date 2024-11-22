@@ -1,5 +1,5 @@
 ../Core/Src/7Segs.c:12:6:off_all_Seg	1
 ../Core/Src/7Segs.c:32:8:display7SEG	13
 ../Core/Src/7Segs.c:131:8:display7SEG2	13
-../Core/Src/7Segs.c:231:6:display2DigitNumberWay1	6
-../Core/Src/7Segs.c:265:6:display2DigitNumberWay2	6
+../Core/Src/7Segs.c:231:6:display2DigitNumberWay1	7
+../Core/Src/7Segs.c:266:6:display2DigitNumberWay2	7

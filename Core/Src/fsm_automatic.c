@@ -30,7 +30,7 @@ switch (status_way1) {
 
             setTimer0(red_led_duration*1000);
             setTimer1(1000); // Start the countdown timer
-            setTimer5(10);
+
             break;
         case AUTO_RED_WAY1:
             // Way 1 Red, Way 2 Green
@@ -38,6 +38,7 @@ switch (status_way1) {
             HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, GPIO_PIN_RESET);
             HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, GPIO_PIN_RESET);
 
+            display2DigitNumberWay1(countdown_way1);
             if (timer1_flag == 1) {
                 setTimer1(1000); // Reset the countdown timer
 
@@ -46,7 +47,7 @@ switch (status_way1) {
 
 
             }
-            display2DigitNumberWay1(countdown_way1);
+
 
             if (isButton1Pressed() == 1) {
                 status_way1 = INIT_mode;
@@ -61,7 +62,7 @@ switch (status_way1) {
 
             display2DigitNumberWay1(countdown_way1);
 				setTimer1(1000); // Start the countdown timer for the next state
-                    setTimer5(10);
+
             }
             break;
         case AUTO_GREEN_WAY1:
@@ -70,12 +71,13 @@ switch (status_way1) {
             HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, GPIO_PIN_SET);
             HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, GPIO_PIN_RESET);
 
+            display2DigitNumberWay1(countdown_way1);
             if (timer1_flag == 1) {
                 setTimer1(1000); // Reset the countdown timer
                 countdown_way1--;
 
             }
-            display2DigitNumberWay1(countdown_way1);
+
 
 
             if (isButton1Pressed() == 1) {
@@ -90,7 +92,7 @@ switch (status_way1) {
 				countdown_way1 = yellow_led_duration; // Reset countdown for next cycle
             display2DigitNumberWay1(countdown_way1);
 			    setTimer1(1000); // Start the countdown timer for the next state
-                                setTimer5(10);
+
             }
             break;
         case AUTO_YELLOW_WAY1:
@@ -101,14 +103,14 @@ switch (status_way1) {
 
 
 
-
+            display2DigitNumberWay1(countdown_way1);
             if (timer1_flag == 1) {
                 setTimer1(1000); // Reset the countdown timer
                 countdown_way1--;
   
                 
             }
-            display2DigitNumberWay1(countdown_way1);
+
             if (isButton1Pressed() == 1) {
                 status_way1 = INIT_mode;
                 status_way2 = INIT_mode;
@@ -122,7 +124,7 @@ switch (status_way1) {
                 
             display2DigitNumberWay1(countdown_way1);
 				setTimer1(1000); // Start the countdown timer for the next state
-                                setTimer5(10);
+
             }
             break;
        
@@ -148,7 +150,7 @@ void fsm_automatic_run_way2() {
 
             setTimer2(green_led_duration * 1000);
             setTimer3(1000); // Start the countdown timer
-            setTimer4(10);
+
             break;
         case AUTO_GREEN_WAY2:
            
@@ -178,7 +180,7 @@ void fsm_automatic_run_way2() {
             display2DigitNumberWay2(countdown_way2);
                 setTimer3(1000); // Start the countdown timer for the next state
             
-            setTimer4(10);
+
             }
             break;
         case AUTO_YELLOW_WAY2:
@@ -206,7 +208,7 @@ void fsm_automatic_run_way2() {
             display2DigitNumberWay2(countdown_way2);
                 setTimer3(1000); // Start the countdown timer for the next state
             
-                setTimer4(10);
+
             }
             break;
         case AUTO_RED_WAY2:
@@ -234,7 +236,7 @@ void fsm_automatic_run_way2() {
             display2DigitNumberWay2(countdown_way2);
                 setTimer3(1000); // Start the countdown timer for the next state
             
-                setTimer4(10);
+
             }
             break;
         default:

@@ -226,7 +226,7 @@ void fsm_select_mode_run() {
            status_way1 = SELECT_MODE_2;
            setTimer0(10000);
             setTimer1(250); //Blinking
-           setTimer4(10);
+           //setTimer4(10);
            }
 
 
@@ -257,7 +257,7 @@ void fsm_select_mode_run() {
                status_way1 = SELECT_MODE_3;
                setTimer0(10000);
             setTimer1(250); //Blinking
-           setTimer4(10);
+           //setTimer4(10);
            }
            // Increment duration with Button 2
            if (isButton2Pressed() == 1) {
@@ -300,7 +300,7 @@ void fsm_select_mode_run() {
                status_way1 = SELECT_MODE_4;
                setTimer0(10000);
               setTimer1(250); //Blinking
-           setTimer4(10);
+           //setTimer4(10);
            
            }
            // Increment duration with Button 2

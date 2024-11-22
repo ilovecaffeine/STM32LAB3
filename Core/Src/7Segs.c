@@ -230,11 +230,12 @@ void off_all_Seg() {
 
 void display2DigitNumberWay1(int number) {
     static int digit = 0; // 0 for tens, 1 for units
-
+    static int firstCall = 1; // Track if it's the first call
     if (number < 0 || number > 99) return; // Ensure the number is between 0 and 99
 
-    if (timer5_flag == 1) {
-        setTimer5(100); // Reset the timer for multiplexing
+    if (firstCall || timer5_flag == 1) {
+        firstCall = 0; // Set to false after the first call
+        setTimer5(101); // Reset the timer for multiplexing
 
         if (number <= 9) {
             // For numbers less than or equal to 9, display the same number on both segments
@@ -264,11 +265,13 @@ void display2DigitNumberWay1(int number) {
 
 void display2DigitNumberWay2(int number) {
     static int digit = 0; // 0 for tens, 1 for units
-
+    static int firstCall = 1; // Track if it's the first call
     if (number < 0 || number > 99) return; // Ensure the number is between 0 and 99
 
-    if (timer4_flag == 1) {
-        setTimer4(100); // Reset the timer for multiplexing
+    if (firstCall || timer4_flag == 1) {
+        firstCall = 0; // Set to false after the first call
+        setTimer4(101); // Reset the timer for multiplexing
+        
         if (number <= 9) {
             // For numbers less than or equal to 9, display the same number on both segments
             
